@@ -14,5 +14,14 @@
     //window.getComputedStyle(div,'after')//伪元素样式表
     // window.getComputedStyle(div,null)[prop] 只读样式 获取最后展示的效果
     // div.currentStyle
+
+    //兼容写法 获取元素的样式属性值
+    function getStyle(elem,prop){
+        if(window.getComputedStyle){
+            return window.getComputedStyle(elem,null)[prop];
+        }else{
+            return elem.currentStyle[prop];
+        }
+    }
 </script>
 </html>
